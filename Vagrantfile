@@ -7,10 +7,10 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "private_network", ip: "10.10.10.10"
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
+    vb.memory = "1536"
   end
 config.vm.provision "shell", inline: <<-SHELL
-  sudo apt-get update 
+  sudo apt-get update
   sudo apt-get upgrade -y
   sudo apt-get update
   sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
