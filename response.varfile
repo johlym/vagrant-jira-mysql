@@ -1,0 +1,12 @@
+#install4j response file for JIRA 6.4.8
+#Tue Jul 28 18:44:44 UTC 2015
+rmiPort$Long=8005
+app.jiraHome=/home/vagrant/atlassian/application-data/jira
+app.install.service$Boolean=false
+existingInstallationDir=/home/vagrant/JIRA
+sys.confirmedUpdateInstallationString=false
+sys.languageId=en
+sys.installationDir=/home/vagrant/atlassian/jira
+executeLauncherAction$Boolean=true
+httpPort$Long=8080
+portChoice=default
