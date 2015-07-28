@@ -24,9 +24,9 @@ config.vm.provision "shell", inline: <<-SHELL
 sudo /etc/init.d/mysql restart
   wget -q http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz
   tar -zxvf mysql-connector-java-5.1.36.tar.gz
-  cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /home/vagrant/atlassian/jira/bin/
   wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.8-x64.bin
   chmod +x atlassian-jira-6.4.8-x64.bin
   sudo ./atlassian-jira-6.4.8-x64.bin
+  cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /home/vagrant/atlassian/jira/bin/
 SHELL
 end
