@@ -4,7 +4,7 @@
 # you're doing.
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.network "forwarded_port", guest: 8080, host: 80
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "private_network", ip: "10.10.10.10"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
@@ -25,9 +25,9 @@ Vagrant.configure(2) do |config|
   sudo /etc/init.d/mysql restart
     wget -q http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz
     tar -zxvf mysql-connector-java-5.1.36.tar.gz
-    wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.8-x64.bin
-    chmod +x atlassian-jira-6.4.8-x64.bin
-    sudo ./atlassian-jira-6.4.8-x64.bin -q -varfile response.varfile
+    wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.9-x64.bin
+    chmod +x atlassian-jira-6.4.9-x64.bin
+    sudo ./atlassian-jira-6.4.9-x64.bin -q -varfile response.varfile
     cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /home/vagrant/atlassian/jira/lib/
     cd /home/vagrant/atlassian/jira/bin
     sudo ./stop-jira.sh
