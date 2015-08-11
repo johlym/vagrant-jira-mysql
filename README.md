@@ -9,15 +9,15 @@ This is where the JIRA-MySQL Vagrantfile comes in handy.
 
 The Vagrantfile included in this repo will:
 
-- Download Atlassian JIRA `6.4.8 x64` for Linux (`.bin`)
+- Download Atlassian JIRA `6.4.9 x64` for Linux (`.bin`)
 - Install MySQL the latest branch of MySQL attached to the `mysql-server` tag in the apt-get repo list.
 - Auto-install JIRA using a varfile. Said file is included.
 
 ## The Technical Stuff
 
-- JIRA: version `6.4.8 x64`
+- JIRA: version `6.4.9 x64`
 - MySQL: Latest
-- Ports (internal/external): `8080:80`
+- Ports (internal/external): `8080:8080`
 - The manual step of installing the JDBC driver for MySQL is included.
 - Added VIM, curl, and some python to the mix to be safe.
 - RAM: `2GB`
