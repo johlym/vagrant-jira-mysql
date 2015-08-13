@@ -3,7 +3,7 @@
 
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/trusty32"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "private_network", ip: "10.10.10.10"
   config.vm.provider "virtualbox" do |vb|
@@ -20,12 +20,10 @@ Vagrant.configure(2) do |config|
     sudo mysql -u root -proot -e "CREATE DATABASE jira;"
     sudo mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION; FLUSH PRIVILEGES;"
   sudo /etc/init.d/mysql restart
-    wget -q http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz
-    tar -zxvf mysql-connector-java-5.1.36.tar.gz
-    wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.10-x64.bin
-    chmod +x atlassian-jira-6.4.10-x64.bin
-    sudo ./atlassian-jira-6.4.10-x64.bin -q -varfile response.varfile
-    cp mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar /home/vagrant/atlassian/jira/lib/
+    wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.10-x32.bin
+    chmod +x atlassian-jira-6.4.10-x32.bin
+    sudo ./atlassian-jira-6.4.10-x32.bin -q -varfile response.varfile
+    cp /home/vagrant/mysql-connector-java-5.1.36-bin.jar /home/vagrant/atlassian/jira/lib/
     cd /home/vagrant/atlassian/jira/bin
     sudo ./stop-jira.sh
     sudo ./start-jira.sh
