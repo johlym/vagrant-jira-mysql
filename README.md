@@ -5,6 +5,19 @@
 You need to do some development work with JIRA, but you don't have the time or patience to install JIRA by hand. 
 This is where the JIRA-MySQL Vagrantfile comes in handy. 
 
+## Requirements
+
+* Vagrant
+* VirtualBox
+
+## Usage
+
+Since this is a git repo, it's best to pull it down via git:
+
+```git clone https://github.com/jelyman2/vagrant-jira-mysql && vagrant up```
+
+I've tested this deployment on both Windows and OS X. I expect Linux to be the same.
+
 ## The Ingredient List
 
 The Vagrantfile included in this repo will:
