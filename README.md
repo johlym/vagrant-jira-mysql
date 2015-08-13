@@ -5,7 +5,7 @@
 You need to do some development work with JIRA, but you don't have the time or patience to install JIRA by hand. 
 This is where the JIRA-MySQL Vagrantfile comes in handy. 
 
-## Requirements
+## System Requirements
 
 * Vagrant
 * VirtualBox
@@ -23,7 +23,7 @@ I've tested this deployment on both Windows and OS X. I expect Linux to be the s
 The Vagrantfile included in this repo will:
 
 - Download Atlassian JIRA `6.4.10 x64` for Linux (`.bin`)
-- Install MySQL the latest branch of MySQL attached to the `mysql-server` tag in the apt-get repo list.
+- Install MySQL the latest branch of MySQL attached to the `mysql-server` tag in the pre-configured repo list.
 - Auto-install JIRA using a varfile. Said file is included.
 
 ## The Technical Stuff
