@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
     vb.memory = "2048"
   end
   config.vm.provision "file", source: "response.varfile", destination: "response.varfile"
+  config.vm.provision "file", source: "supporting/mysql_connector.jar", destination: "mysql_connector.jar"
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
     sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
@@ -23,7 +24,7 @@ Vagrant.configure(2) do |config|
     wget -q https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.10-x32.bin
     chmod +x atlassian-jira-6.4.10-x32.bin
     sudo ./atlassian-jira-6.4.10-x32.bin -q -varfile response.varfile
-    cp /home/vagrant/supporting/mysql_connector.jar /home/vagrant/atlassian/jira/lib/
+    cp /home/vagrant/mysql_connector.jar /home/vagrant/atlassian/jira/lib/
     cd /home/vagrant/atlassian/jira/bin
     sudo ./stop-jira.sh
     sudo ./start-jira.sh
